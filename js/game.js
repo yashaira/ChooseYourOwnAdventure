@@ -6,24 +6,24 @@ var game = {
     levels: {
 
         start: {
-            message: "You come across a dark cave",
+            message: "You wake up in a dark, dank room. You're laying on the gravelly floor with a hospitial gown on, you don't remember how you got there. Do you...",
             choices: [
                 {
-                    text: "Enter the cave",
-                    nextLevel: "cave",
+                    text: "Get up and walk around in the dark, trying to find a way out",
+                    nextLevel: "hallway",
                 },
 
                 {
-                    text: "Keep on moving",
-                    nextLevel: "field",
+                    text: "Stay put, trying to remember how you got there",
+                    nextLevel: "stay",
                 },
             ]
         },
 
-        cave: {
+        stay: {
             background_image: "fire.gif",
             music: "Final-Fantasy-7-Boss-Battle.mp3",
-            message: "You come across a fire monster or something!",
+            message: "You stay put, you begin to hear loud rumbling noises and with the blink of an eye you DIE",
             choices: [
                 {
                     text: "Start over",
@@ -32,15 +32,37 @@ var game = {
             ]
         },
 
-        field: {
-            message: "Some adventurer you are...",
+        hallway : {
+            message: "You feel your way through the dark as best you can and find a door, you walk through and find yourself in a narrow, dimly lit, long hallway, you hear a noise!Do you...",
             choices: [
                 {
-                    text: "Start over",
-                    nextLevel: "start",
+                    text: "Hide!",
+                    nextLevel: "hiding",
                 },
+                { 
+                    text:"Run!",
+                    nextlevel: "run",
+                }
             ]
         },
+        
+        hiding: { 
+            message: "You find a random door and go inside. You find yourself back to where you started! do you ",
+            choices: [ 
+                { 
+                    text: " Give up",
+                    nextlevel: "give up",
+                },
+                {
+                    text:" wait for the noise to stop"
+                    nextlevl:"wait"
+                }
+            ]
+        
+        }, 
 
     }
 };
+
+console.log(game.start);
+
